@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications Platform - Approval Workflow</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="logo">
+                    <i class="fas fa-cube"></i>
+                    <span>Applications<br><small>Platform</small></span>
+                </div>
+            </div>
+            <div class="header-right">
+                <i class="fas fa-th"></i>
+                <i class="fas fa-search"></i>
+                <i class="fas fa-question-circle"></i>
+                <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <nav class="sidebar-nav">
+                    <div class="nav-item active">
+                        <i class="fas fa-file-alt"></i>
+                        <span>My Approvals</span>
+                    </div>
+                    <div class="nav-item">
+                        <i class="fas fa-list"></i>
+                        <span>All Approvals</span>
+                    </div>
+                    <div class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Admin</span>
+                    </div>
+                    <div class="nav-item">
+                        <i class="fas fa-trash"></i>
+                        <span>Recycle Bin</span>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Approval Header -->
+                <div class="approval-header">
+                    <div class="breadcrumb">
+                        <span>Approval: Approval Type - Create Task</span>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-back"><i class="fas fa-arrow-left"></i></button>
+                        <button class="btn-nav"><i class="fas fa-chevron-left"></i></button>
+                        <button class="btn-nav"><i class="fas fa-chevron-right"></i></button>
+                        <button class="btn-approve"><i class="fas fa-check"></i> Approve</button>
+                        <button class="btn-reject"><i class="fas fa-times"></i> Reject</button>
+                        <button class="btn-forward"><i class="fas fa-share"></i></button>
+                        <button class="btn-more"><i class="fas fa-ellipsis-v"></i></button>
+                        <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                        <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                    </div>
+                </div>
+
+                <!-- Workflow Progress -->
+                <div class="workflow-progress">
+                    <div class="workflow-step completed">
+                        <div class="step-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">Approval Initiated</div>
+                            <div class="step-subtitle">Initiated by Billy Hemphill</div>
+                            <div class="step-time">18-03-2019 ⏰ 10:40</div>
+                        </div>
+                    </div>
+                    <div class="workflow-step current">
+                        <div class="step-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">1 - Hosny</div>
+                            <div class="step-subtitle">Awaiting Approval</div>
+                        </div>
+                    </div>
+                    <div class="workflow-step pending">
+                        <div class="step-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">2 - Director Approval</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Sections -->
+                <div class="content-sections">
+                    <!-- Left Section - Approval Details -->
+                    <div class="left-section">
+                        <div class="section-card">
+                            <h3>APPROVAL DETAILS</h3>
+                            <div class="detail-row">
+                                <span class="label">Type</span>
+                                <span class="value">Approval Type</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Approval</span>
+                                <span class="value link">Approval Type - Create Task</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Process</span>
+                                <span class="value link">Director Approval (Default)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Section - Approval Status -->
+                    <div class="right-section">
+                        <div class="section-card">
+                            <h3>APPROVAL STATUS</h3>
+                            <div class="detail-row">
+                                <span class="label">Step</span>
+                                <span class="value link">1 - Hosny</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Status</span>
+                                <span class="value">Pending Approval</span>
+                            </div>
+                        </div>
+
+                        <div class="section-card">
+                            <h3>ESCALATION STATUS</h3>
+                            <div class="escalation-bar">
+                                <div class="escalation-progress"></div>
+                            </div>
+                            <div class="escalation-text">
+                                Change Approvers to 'Hosny Ansar' in <strong>-289 Day 23 Hour 39 Minute</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs Section -->
+                <div class="tabs-container">
+                    <div class="tabs">
+                        <button class="tab">SOURCE RECORD</button>
+                        <button class="tab active">APPROVAL MILESTONES</button>
+                        <button class="tab">SYSTEM INFO</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="table-controls">
+                            <button class="table-btn"><i class="fas fa-sync"></i></button>
+                            <button class="table-btn"><i class="fas fa-th"></i></button>
+                            <button class="table-btn"><i class="fas fa-sort"></i></button>
+                            <button class="table-btn table-export"><i class="fas fa-download"></i></button>
+                        </div>
+
+                        <div class="data-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Step</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                        <th>Comments</th>
+                                        <th>Date/Time <i class="fas fa-sort"></i></th>
+                                        <th>User</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>Pending Approval</td>
+                                        <td>Approval Initiated</td>
+                                        <td>Default Approval Process 'Director Approval' (Default) selected</td>
+                                        <td>03/18/2019, 10:40 AM</td>
+                                        <td class="user-link">Billy Hemphill</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="table-footer">
+                                <span>1 - 1 of 1 items</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
