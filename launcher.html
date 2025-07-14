@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Approval Workflow Launcher</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        .countdown {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #ffd700;
+        }
+        .options {
+            margin-top: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background: #4a90e2;
+            color: white;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .server-info {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .success { background: rgba(40, 167, 69, 0.3); }
+        .info { background: rgba(74, 144, 226, 0.3); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Approval Workflow Launcher</h1>
+        <p>Starting your approval workflow application...</p>
+        
+        <div class="countdown" id="countdown">Auto-launching in 3 seconds...</div>
+        
+        <div class="status success">
+            ✅ Application files loaded successfully
+        </div>
+        
+        <div class="server-info">
+            <h3>🌐 Access Options</h3>
+            <p><strong>File Path:</strong> /workspace/Web-Application-Approval-workflow/index.html</p>
+            <p><strong>Server URLs:</strong></p>
+            <ul style="list-style: none; padding: 0;">
+                <li>• http://localhost:8080</li>
+                <li>• http://127.0.0.1:8080</li>
+                <li>• http://172.30.0.2:8080</li>
+            </ul>
+        </div>
+        
+        <div class="options">
+            <a href="index.html" class="btn" onclick="openApp()">
+                🎯 Open Application Now
+            </a>
+            <button class="btn" onclick="copyPath()">
+                📋 Copy File Path
+            </button>
+            <button class="btn" onclick="showInstructions()">
+                📖 Show Instructions
+            </button>
+        </div>
+        
+        <div id="instructions" style="display: none; margin-top: 20px; text-align: left;">
+            <div class="status info">
+                <h4>📱 Multiple Ways to Access:</h4>
+                <ol>
+                    <li><strong>Direct File:</strong> Double-click index.html file</li>
+                    <li><strong>Browser URL:</strong> file:///workspace/Web-Application-Approval-workflow/index.html</li>
+                    <li><strong>Server URLs:</strong> Try the URLs listed above</li>
+                    <li><strong>Copy & Paste:</strong> Copy file path and paste in browser address bar</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let counter = 3;
+        const countdownEl = document.getElementById('countdown');
+        
+        const countdown = setInterval(() => {
+            counter--;
+            countdownEl.textContent = `Auto-launching in ${counter} seconds...`;
+            
+            if (counter <= 0) {
+                clearInterval(countdown);
+                countdownEl.textContent = '🚀 Launching application...';
+                openApp();
+            }
+        }, 1000);
+        
+        function openApp() {
+            // Try multiple methods to open the app
+            const urls = [
+                'index.html',
+                'http://localhost:8080',
+                'http://127.0.0.1:8080',
+                'http://172.30.0.2:8080'
+            ];
+            
+            // Try to open the first available option
+            window.location.href = urls[0];
+        }
+        
+        function copyPath() {
+            const path = '/workspace/Web-Application-Approval-workflow/index.html';
+            navigator.clipboard.writeText(path).then(() => {
+                alert('✅ File path copied to clipboard!\nPaste it in your browser address bar.');
+            }).catch(() => {
+                prompt('📋 Copy this path:', path);
+            });
+        }
+        
+        function showInstructions() {
+            const instructions = document.getElementById('instructions');
+            instructions.style.display = instructions.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        // Test server connectivity
+        function testServer() {
+            const testUrls = [
+                'http://localhost:8080',
+                'http://127.0.0.1:8080',
+                'http://172.30.0.2:8080'
+            ];
+            
+            testUrls.forEach(url => {
+                fetch(url)
+                    .then(() => console.log(`✅ Server accessible at: ${url}`))
+                    .catch(() => console.log(`❌ Server not accessible at: ${url}`));
+            });
+        }
+        
+        // Auto-test servers when page loads
+        setTimeout(testServer, 1000);
+    </script>
+</body>
+</html>

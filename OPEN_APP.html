@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🚀 Open Approval Workflow App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .btn {
+            display: inline-block;
+            background: #4a90e2;
+            color: white;
+            padding: 15px 25px;
+            margin: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        .btn:hover { background: #357abd; }
+        .methods { text-align: left; margin: 20px 0; }
+        .method { 
+            background: #f8f9fa; 
+            padding: 15px; 
+            margin: 10px 0; 
+            border-radius: 5px;
+            border-left: 4px solid #4a90e2;
+        }
+        .path {
+            background: #f1f3f4;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+            margin: 5px 0;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Approval Workflow Application</h1>
+        <p><strong>Your application is ready! Choose any method below to access it:</strong></p>
+        
+        <div style="margin: 20px 0;">
+            <a href="approval-workflow-app.html" class="btn">📱 Open Application</a>
+            <a href="http://localhost:8080" class="btn">🌐 Server URL</a>
+            <button onclick="copyPath()" class="btn">📋 Copy File Path</button>
+        </div>
+        
+        <div class="methods">
+            <div class="method">
+                <h3>🔥 Method 1: Click Above Button</h3>
+                <p>Click the "📱 Open Application" button above</p>
+            </div>
+            
+            <div class="method">
+                <h3>🌍 Method 2: Server URLs</h3>
+                <p>Try these URLs in your browser:</p>
+                <div class="path">http://localhost:8080</div>
+                <div class="path">http://127.0.0.1:8080</div>
+                <div class="path">http://172.30.0.2:8080</div>
+            </div>
+            
+            <div class="method">
+                <h3>📁 Method 3: Direct File</h3>
+                <p>Open these files directly in your browser:</p>
+                <div class="path">/workspace/approval-workflow-app.html</div>
+                <div class="path">/workspace/Web-Application-Approval-workflow/index.html</div>
+            </div>
+            
+            <div class="method">
+                <h3>🔗 Method 4: Browser Address Bar</h3>
+                <p>Copy and paste this into your browser address bar:</p>
+                <div class="path">file:///workspace/approval-workflow-app.html</div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #e8f5e8; border-radius: 8px;">
+            <h3>✅ Application Features</h3>
+            <ul style="text-align: left;">
+                <li>📊 Professional approval workflow interface</li>
+                <li>🎯 Interactive approve/reject actions</li>
+                <li>📱 Responsive design for all devices</li>
+                <li>🔔 Real-time notifications</li>
+                <li>📋 Data tables with export functionality</li>
+                <li>⚡ Fast, lightweight, no setup required</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        function copyPath() {
+            const path = '/workspace/approval-workflow-app.html';
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(path).then(() => {
+                    alert('✅ File path copied!\\nPaste it in your browser address bar.');
+                });
+            } else {
+                prompt('📋 Copy this file path:', path);
+            }
+        }
+    </script>
+</body>
+</html>
